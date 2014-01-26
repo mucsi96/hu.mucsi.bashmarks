@@ -6,7 +6,7 @@ touch $BASHMARKS
 RED="0;31m"
 GREEN="0;33m"
 
-function _bookmark_name_valid {
+_bookmark_name_valid() {
     exit_message=""
     if [ -z $1 ]; then
         exit_message="bookmark name required"
@@ -17,7 +17,7 @@ function _bookmark_name_valid {
     fi
 }
 
-function _purge_line {
+_purge_line() {
     if [ -s "$1" ]; then
         t="/tmp/.z.tmp"
         trap "rm -f -- '$t'" EXIT
@@ -41,6 +41,11 @@ l() {
 	env | sort | awk '/DIR_.+/{split(substr($0,5),parts,"="); printf("\033[0;33m%-20s\033[0m %s\n", parts[1], parts[2]);}'
 }
 
+_l() {
+    source $BASHMARKS
+    env | grep "^DIR_" | cut -c5- | sort | grep "^.*=" | cut -f1 -d "=" 
+}
+
 s() {
 	_bookmark_name_valid "$@"
     if [ -z "$exit_message" ]; then
@@ -58,4 +63,14 @@ d() {
 	fi
 }
 
+_comp () {
+    local curw
+    COMPREPLY=()
+    curw=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=($(compgen -W '`_l`' -- $curw))
+    return 0
+}
+
+complete -F _comp g
+complete -F _comp d
 echo "Bashmarks started"
