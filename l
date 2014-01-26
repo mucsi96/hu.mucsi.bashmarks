@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ ! -n "$SDIRS" ]; then
-    SDIRS=~/dirs.log
+    SDIRS=~/.bashmarks
 fi
 touch $SDIRS
 source $SDIRS
