@@ -21,6 +21,12 @@ Usage
     d xxx : delete bookmark
     l     : list bookmarks
 
+Where Bashmarks are stored
+--------------------------
+    
+All of your bookmarks are saved in a file called ".bashmarks" in your user folder.
+
 Reference
 ---------
  - Inspired by bashmarks: https://github.com/huyng/bashmarks
+
