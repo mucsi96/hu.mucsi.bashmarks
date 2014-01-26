@@ -5,6 +5,7 @@ Description
 -----------
  - [bashmarks](https://github.com/huyng/bashmarks) for Windows Git Bash command line
  - Bookmark your favorite folders and do quick switch using tags
+ - Autocomplete
  - Enables quick/easy jumping between folders
  - Written in pure bash script files
  - Supports Windows XP/Vista/Win7/Win8
