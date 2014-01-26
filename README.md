@@ -11,8 +11,8 @@ Description
 
 Setup
 -----
- - Simple download and put "go", "l", "s", "d" scripts into C:\Program Files (x86)\Git\bin
- - Put ".bashrc" file to your user folder
+ - Simple download and put "bashmarks.sh" to C:\Program Files (x86)\Git\lib
+ - Add "source /lib/bashmarks.sh" to ".bashrc" file in your user folder
 
 Usage
 -----
